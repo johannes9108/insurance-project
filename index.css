@@ -1,0 +1,41 @@
+body {
+  background-color: gainsboro;
+  width: 70vw;
+  margin: auto;
+}
+
+header {
+  background-color: gold;
+  height: 40vh;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5vh;
+  width: 60%;
+  background-color: hotpink;
+  margin: auto;
+}
+
+.mainContent {
+  display: none;
+  background-color: lawngreen;
+  height: 90vh;
+}
+
+.gridSection {
+  height: 40vh;
+  background-color: lightseagreen;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50%);
+}
+.gridItem {
+  display: flex;
+}
+footer {
+  text-align: center;
+  background-color: maroon;
+}
