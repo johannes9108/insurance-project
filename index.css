@@ -1,12 +1,38 @@
 body {
   background-color: gainsboro;
-  width: 70vw;
+  width: 80vw;
   margin: auto;
 }
 
 header {
   background-color: gold;
   height: 40vh;
+}
+.gridHeader{
+    background-color: yellowgreen;
+    height: 100%;
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+
+    grid-template-areas:
+     "big top"
+     "big bot";
+}
+.headerBig{
+    grid-area: big;
+    background-color: rgb(138, 184, 221);
+    background-image: url("img/family.png");
+    background-position: bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+.headerSmall:first-child{
+    grid-area: top;
+}
+.headerSmall:last-child{
+    grid-area: bot;
 }
 
 nav {
@@ -28,12 +54,30 @@ nav {
 .gridSection {
   height: 40vh;
   background-color: lightseagreen;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 50%);
 }
 .gridItem {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dotted wheat;
+  background-color: yellow;
+}
+.gridItem:first-child {
+  font-weight: bold;
+  font-size: 2rem;
+  wor
+}
+.gridItem span {
+  /* align-self: flex-start; */
+  position: relative;
+  left: -15%;
+  top: -25%;
+  padding: 0;
+  margin: 0;
+  background-color: violet;
 }
 footer {
   text-align: center;
