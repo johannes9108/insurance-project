@@ -1,85 +1,158 @@
 body {
-  background-color: gainsboro;
-  width: 80vw;
-  margin: auto;
+    background-color: gainsboro;
+    width: 800px;
+    margin: auto;
 }
 
 header {
-  background-color: gold;
-  height: 40vh;
+    background-color: gold;
+    height: 40vh;
 }
 .gridHeader{
+    position: relative;
     background-color: yellowgreen;
     height: 100%;
     display: grid;
-
+    
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-
+    
     grid-template-areas:
-     "big top"
-     "big bot";
+    "topLeft topRight"
+    "bottomLeft bottomRight";
 }
-.headerBig{
-    grid-area: big;
-    background-color: rgb(138, 184, 221);
-    background-image: url("img/family.png");
-    background-position: bottom right;
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
+.topLeft{
+    
+    /* width: 60%; */
+    
+    /* text-align: center; */
+    /* position: absolute; */
+    /* left: 25%; */
+    padding: 10% 15%;
+    box-sizing: content-box;
+    grid-area: topLeft;
+    background-color: rgb(186, 218, 245);
+    
 }
-.headerSmall:first-child{
-    grid-area: top;
+.topLeft>span{
+    font-size: 2rem;
+    font-weight: bolder;
 }
-.headerSmall:last-child{
-    grid-area: bot;
+.topLeft p span{
+    color: white;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 5vh;
-  width: 60%;
-  background-color: hotpink;
-  margin: auto;
+.joinButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    /* padding: 1% 3%; */
+    width:30%;
+    height: 15%;
+    border-radius: 40px;
+    box-shadow: 0 0 5px 1px gray;
 }
+.bottomLeft{
+    grid-area: bottomLeft;
+    background-color: rgb(186, 218, 245);
+    background-image: url("img/family.png");
+    background-position: 90%;
+    background-origin: border-box;
+    background-size: 55% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.bottomLeft .joinButton{
+    position: absolute;
+    left: 20%;
+    top: 25%;
+    
+}
+
+.topRight, .bottomRight{
+    font-size: 1rem; 
+    text-align: center;
+    padding-top: 20%;
+} 
+.gridHeader h6{
+    margin: 0;
+    padding: 0; 
+    
+}
+.topRight{
+    grid-area: topRight;
+    background-color: tomato;
+}
+.bottomRight{
+    
+    grid-area: bottomRight;
+    background-color: orange;
+}
+.topRight span:nth-child(2), .bottomRight span:nth-child(2){
+    font-size: 1.8em; 
+    font-weight: bold;
+    color: white;        
+} 
+
+nav{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background-color: gainsboro;
+}
+.navContainer {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5vh;
+    width: 60%;
+    /* background-color: hotpink; */
+    margin: auto;
+    
+}
+
 
 .mainContent {
-  display: none;
-  background-color: lawngreen;
-  height: 90vh;
+    display: block;
+    background-color: lawngreen;
+    height: 150vh;
 }
 
 .gridSection {
-  height: 40vh;
-  background-color: lightseagreen;
-  display: none;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 50%);
+    height: 40vh;
+    background-color: lightseagreen;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 50%);
 }
 .gridItem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px dotted wheat;
-  background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dotted wheat;
+    background-color: yellow;
 }
 .gridItem:first-child {
-  font-weight: bold;
-  font-size: 2rem;
-  wor
+    font-weight: bold;
+    font-size: 2rem;
+    wor
 }
 .gridItem span {
-  /* align-self: flex-start; */
-  position: relative;
-  left: -15%;
-  top: -25%;
-  padding: 0;
-  margin: 0;
-  background-color: violet;
+    /* align-self: flex-start; */
+    position: relative;
+    left: -15%;
+    top: -25%;
+    padding: 0;
+    margin: 0;
+    background-color: violet;
 }
 footer {
-  text-align: center;
-  background-color: maroon;
+    text-align: center;
+    background-color: maroon;
 }
