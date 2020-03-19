@@ -1,3 +1,4 @@
+/* index.HTML */
 body {
   background-color: gainsboro;
   width: 80vw;
@@ -118,7 +119,7 @@ header .joinButton {
 }
 
 nav {
-  display: none;
+  display: flex;
   justify-content: center;
   position: sticky;
   z-index: 1;
@@ -145,6 +146,7 @@ nav {
   color: rgb(110, 110, 110);
 }
 .navItem:hover {
+  font-weight: bold;
   border-right: solid 1px black;
   border-left: solid 1px black;
   border-collapse: collapse;
@@ -154,27 +156,28 @@ nav {
 }
 
 .mainContent {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: svg;
-  height: 75vh;
+  height: 75vw;
   padding: 5% 8%;
+  padding-bottom: 12%;
   background: -webkit-linear-gradient(top, grey 50%, orange 10%);
 }
 
 .personalSafety {
   display: flex;
 
-  /* justify-content: space-b; */
+  justify-content: space-around;
   /* background-color: teal; */
   height: 30%;
 }
 
 .personalSafety > div {
-  width: 50%;
-  height: 100%;
+  width: 40%;
+  height: 80%;
   /* background-color: blueviolet; */
 }
 
@@ -183,15 +186,12 @@ nav {
   flex-direction: column;
   justify-content: space-between;
 
-  height: 100%;
-  width: 50%;
   padding-right: 10%;
-  /* border: 1px solid black; */
   box-sizing: border-box;
 }
 .personalSafety > div:nth-child(2) {
   /* background-color: blanchedalmond; */
-  padding: 0 8%;
+  padding: 0 4%;
   box-sizing: border-box;
 }
 .personalSafety p {
@@ -200,7 +200,10 @@ nav {
 }
 .personalSafety div > span {
   color: white;
-  font-size: 2rem;
+  font-size: 1.9rem;
+
+  font-family: Times, serif;
+  font-weight: bold;
 }
 .personalSafety .joinButton {
   width: 45%;
@@ -285,14 +288,15 @@ nav {
   font-size: 0.8rem;
 }
 .gridSection {
-  display: none;
-  height: 480px;
+  display: grid;
+  height: 50vw;
   /* width: 100%; */
   background-color: lightseagreen;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 50%);
 }
 .gridItem {
+  text-align: center;
   position: relative;
   display: flex;
   justify-content: center;
@@ -300,6 +304,7 @@ nav {
   /* border: 1px dotted wheat; */
   background-color: white;
   box-sizing: border-box;
+  padding: 20%;
 }
 .gridItem:first-child {
   font-weight: bold;
@@ -323,7 +328,7 @@ nav {
   opacity: 0.4;
 }
 footer {
-  display: none;
+  display: flex;
   height: fit-content;
   justify-content: center;
   align-items: center;
@@ -342,3 +347,5 @@ footer div span {
   display: block;
   text-decoration: none;
 }
+
+/* CONTACT.html */
