@@ -3,9 +3,12 @@ body {
   width: 800px;
   margin: auto;
 }
+p {
+  font-family: Times;
+}
 
 header {
-  display: none;
+  display: flex;
   background-color: gold;
   height: 40vh;
 }
@@ -102,9 +105,10 @@ header .joinButton {
 }
 
 nav {
-  display: none;
+  display: flex;
   justify-content: center;
   position: sticky;
+  z-index: 1;
   width: 100%;
   top: 0;
   background-color: gainsboro;
@@ -137,7 +141,7 @@ nav {
 }
 
 .mainContent {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -306,7 +310,22 @@ nav {
   opacity: 0.4;
 }
 footer {
-  display: none;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background-color: maroon;
+  /* background-color: maroon; */
+}
+footer div {
+  width: 100%;
+  background-color: silver;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+}
+footer div span {
+  display: block;
+  text-decoration: none;
 }
