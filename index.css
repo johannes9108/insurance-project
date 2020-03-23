@@ -233,8 +233,6 @@ nav {
 
 .mainContent {
   height: 75vh;
-}
-.mainContent {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -387,8 +385,8 @@ nav {
   font-size: 0.8rem;
 }
 .gridSection {
-  display: none;
-  height: 50vw;
+  display: grid;
+  height: 66.655vw;
   /* width: 100%; */
   background-color: lightseagreen;
   grid-template-columns: repeat(3, 1fr);
@@ -423,11 +421,11 @@ nav {
   top: 10%;
   padding: 0;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   opacity: 0.4;
 }
 footer {
-  display: none;
+  display: flex;
   height: fit-content;
   justify-content: center;
   align-items: center;
@@ -563,6 +561,9 @@ main.contact {
     width: 80vw;
     background-color: red;
   }
+  .gridSection {
+    height: 53.2vw;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -602,6 +603,10 @@ main.contact {
   .mainContent > article {
     max-width: 100%;
   }
+
+  .cornerNumber {
+    font-size: 1.5rem;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -637,5 +642,8 @@ main.contact {
   body {
     width: 960px;
     background-color: pink;
+  }
+  .gridSection {
+    height: 49vw;
   }
 }
