@@ -232,73 +232,83 @@ nav {
 }
 
 .mainContent {
-  display: none;
+  height: 75vh;
+}
+.mainContent {
+  display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: svg;
-  height: 75vw;
-  padding: 5% 8%;
-  padding-bottom: 12%;
-  background: -webkit-linear-gradient(top, grey 50%, orange 10%);
+  /* height: 75vh; */
+
+  /* padding-bottom: 12%; */
+  background: -webkit-linear-gradient(top, grey 45%, orange 10%);
+}
+.mainContent article {
+  /* margin-bottom: 3vw; */
+  /* background-color: aquamarine;
+  border: 1px solid black; */
+  height: 25%;
+  max-width: 80%;
 }
 
 .personalSafety {
+  /* max-width: 80%; */
   display: flex;
-
-  justify-content: space-around;
+  flex-flow: row;
+  /* background-color: aqua; */
+  /* flex-grow: 1; */
   /* background-color: teal; */
-  height: 30%;
+  /* height: 30%; */
 }
 
 .personalSafety > div {
-  width: 40%;
-  height: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  /* background-color: cadetblue; */
+  justify-content: space-around;
+  align-items: center;
+  /* width: 40%;
+  height: 80%; */
   /* background-color: blueviolet; */
 }
 
-.personalSafety > div:nth-child(1) {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding-right: 10%;
-  box-sizing: border-box;
-}
-.personalSafety > div:nth-child(2) {
-  /* background-color: blanchedalmond; */
-  padding: 0 4%;
-  box-sizing: border-box;
+.hiddenBlockContent {
+  display: none;
 }
 .personalSafety p {
+  overflow: hidden;
+  max-width: 50%;
   padding: 0;
   margin: 0;
 }
-.personalSafety div > span {
+.personalSafety span {
+  box-sizing: border-box;
+
+  /* background-color: blue; */
   color: white;
   font-size: 1.9rem;
-
   font-family: Times, serif;
   font-weight: bold;
 }
 .personalSafety .joinButton {
   width: 45%;
   height: 15%;
-  position: relative;
-  bottom: ;
 }
 .portraits {
+  /* width: 80%; */
   display: flex;
-  /* justify-content: space-between; */
+  align-items: center;
   /* position: relative; */
-  margin: 1% 0;
-  height: 30%;
+  /* margin: 1% 0; */
+  /* height: 30%; */
   /* background-color: blue; */
   font-size: 0.8rem;
   /* display: inline-block; */
 }
 .portraits > div {
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -335,6 +345,8 @@ nav {
   margin: auto;
   width: 80%;
   overflow: hidden;
+  font-size: 0.5rem;
+  opacity: 0.8;
 }
 .text_container > * {
   margin: 2%;
@@ -342,23 +354,29 @@ nav {
 .child {
   background-color: rgb(186, 218, 245);
   background-image: url("img/child_cropped.png");
-  background-size: 35%;
+  background-size: contain;
+  background-position: 50% 5px;
 }
 .adult {
   background-color: orange;
   background-image: url("img/adult_cropped.png");
-  background-size: 40%;
+  background-size: contain;
+  background-position: 50% 5px;
 }
 .old {
   background-color: tomato;
   background-image: url("img/old_cropped.png");
-  background-size: 55%;
+  background-size: contain;
+  background-position: 50% 10px;
 }
 .aboutUs {
+  overflow: auto;
+  box-sizing: border-box;
+  /* background-color: brown; */
   text-align: center;
   /* background-color: red; */
-  height: 30%;
-  width: 50%;
+  /* height: 30%; */
+  /* width: 65%; */
   /* margin: 7% auto; */
 }
 .aboutUs h1 {
@@ -562,6 +580,28 @@ main.contact {
     display: inline;
     margin-left: 0%;
   }
+  .personalSafety {
+    /* background-color: aqua; */
+    justify-content: space-around;
+    /* background-color: teal; */
+    /* height: 30%; */
+  }
+  .personalSafety > div {
+    justify-content: space-between;
+  }
+  .hiddenBlockContent {
+    display: block;
+  }
+  .personalSafety .joinButton {
+    align-self: flex-start;
+  }
+
+  .mainContent {
+    padding: 5% 8%;
+  }
+  .mainContent > article {
+    max-width: 100%;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -574,6 +614,22 @@ main.contact {
   .bottomLeft {
     /* background-size: contain; */
   }
+
+  /* .child {
+    background-color: rgb(186, 218, 245);
+    background-image: url("img/child_cropped.png");
+    background-size: 35%;
+  }
+  .adult {
+    background-color: orange;
+    background-image: url("img/adult_cropped.png");
+    background-size: 40%;
+  }
+  .old {
+    background-color: tomato;
+    background-image: url("img/old_cropped.png");
+    background-size: 55%;
+  } */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
