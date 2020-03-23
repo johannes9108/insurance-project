@@ -1,28 +1,15 @@
 /* index.HTML */
 body {
-  background-color: gainsboro;
-  width: 40vw;
+  background-color: navajowhite;
+
   margin: auto;
-  /* font-size: 16px; */
-}
-@media screen and (min-width: 600px) {
-  body {
-    width: 60vw;
-    background-color: blue;
-  }
-}
-@media screen and (min-width: 992px) {
-  body {
-    width: 60vw;
-    background-color: green;
-  }
+  font-size: 16px;
 }
 
 header {
   display: flex;
   background-color: gold;
-  height: 40vw;
-  width: 100%;
+  height: 30vh;
 }
 .gridHeader {
   position: relative;
@@ -38,32 +25,62 @@ header {
     "topLeft topRight"
     "bottomLeft bottomRight";
 }
+.gridHeader > * {
+  position: relative;
+}
 .topLeft {
   /* width: 60%; */
 
   /* text-align: center; */
   /* position: absolute; */
   /* left: 25%; */
-  padding-top: 10%;
-  padding-left: 20%;
-  padding-right: 20%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   grid-area: topLeft;
   background-color: rgb(186, 218, 245);
   font-family: Times, serif;
 }
-.topLeft > span {
-  display: block;
-  /* width: 100%; */
-  font-size: 2rem;
-  font-weight: bolder;
+.gridContentContainer {
+  position: relative;
+  box-sizing: border-box;
+  padding: 5%;
+  padding-bottom: 0;
+  width: 80%;
+  height: 90%;
+  overflow: auto;
 }
-.topLeft p {
+
+.gridContentContainer > span {
+  position: absolute;
+  /* display: inline-block; */
+  /* width: 100%; */
+  font-size: 1.5rem;
+  font-weight: bolder;
+  transition: opacity 1s ease;
+}
+
+.gridContentContainer p {
+  position: absolute;
   padding: 0;
   margin: 0;
   font-size: 0.8rem;
   line-height: 1.3rem;
   width: 88%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+/* .gridContentContainer > * {
+  position: relative;
+  opacity: 1;
+} */
+.topLeft:hover p {
+  opacity: 1;
+}
+.topLeft:hover .gridContentContainer > span {
+  opacity: 0;
 }
 .topLeft p span {
   color: white;
@@ -93,7 +110,7 @@ header .joinButton {
   background-image: url("img/family.png");
   background-position: 90%;
   background-origin: border-box;
-  background-size: 60% 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -105,9 +122,11 @@ header .joinButton {
 
 .topRight,
 .bottomRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 1rem;
   text-align: center;
-  padding-top: 20%;
 }
 .gridHeader h6 {
   margin: 0;
@@ -125,6 +144,7 @@ header .joinButton {
   height: 100%;
   background-color: tomato;
   transition: opacity 3s ease;
+  overflow: auto;
 }
 .topRight:hover .fadeInContainer {
   opacity: 1;
@@ -171,7 +191,7 @@ header .joinButton {
 }
 
 nav {
-  display: flex;
+  display: none;
   justify-content: center;
   position: sticky;
   z-index: 1;
@@ -514,4 +534,44 @@ main.contact {
   font-size: 2.5rem;
   letter-spacing: -1px;
   margin: 0;
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    width: 80vw;
+    background-color: red;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    width: 80vw;
+    background-color: yellow;
+  }
+  .gridContentContainer > span,
+  .gridContentContainer > p {
+    position: relative;
+    opacity: 1;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body {
+    width: 80vw;
+    background-color: lime;
+  }
+
+  .bottomLeft {
+    /* background-size: contain; */
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    width: 960px;
+    background-color: pink;
+  }
 }
