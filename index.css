@@ -1,11 +1,21 @@
 /* index.HTML */
 body {
   background-color: gainsboro;
-  width: 80vw;
+  width: 40vw;
   margin: auto;
   /* font-size: 16px; */
 }
-p {
+@media screen and (min-width: 600px) {
+  body {
+    width: 60vw;
+    background-color: blue;
+  }
+}
+@media screen and (min-width: 992px) {
+  body {
+    width: 60vw;
+    background-color: green;
+  }
 }
 
 header {
@@ -104,13 +114,55 @@ header .joinButton {
   padding: 0;
 }
 .topRight {
+  position: relative;
   grid-area: topRight;
   background-color: tomato;
 }
+.fadeInContainer {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: tomato;
+  transition: opacity 3s ease;
+}
+.topRight:hover .fadeInContainer {
+  opacity: 1;
+}
+
 .bottomRight {
+  position: relative;
   grid-area: bottomRight;
   background-color: orange;
 }
+
+@keyframes slideInDropDown {
+  0% {
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+.slideInContainer {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: azure;
+  transform: scaleX(0);
+
+  /* transition: transform 2s; */
+  transform-origin: 0% 100%;
+}
+.bottomRight:hover .slideInContainer {
+  animation: slideInDropDown 4s;
+}
+
 .topRight span:nth-child(2),
 .bottomRight span:nth-child(2) {
   font-size: 1.8em;
@@ -131,13 +183,13 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5vh;
+  height: 5vw;
   width: 60%;
   /* background-color: hotpink; */
   margin: auto;
 }
 .navItem {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -156,7 +208,7 @@ nav {
 }
 
 .mainContent {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -247,6 +299,11 @@ nav {
   background-position: bottom;
   transform: translate(0, -13%);
   border-radius: 2%;
+  transition: transform 2s;
+}
+.image_container:hover {
+  transform: scale(1.5, 1.5);
+  z-index: 1;
 }
 .text_container {
   text-align: center;
@@ -288,7 +345,7 @@ nav {
   font-size: 0.8rem;
 }
 .gridSection {
-  display: grid;
+  display: none;
   height: 50vw;
   /* width: 100%; */
   background-color: lightseagreen;
@@ -328,7 +385,7 @@ nav {
   opacity: 0.4;
 }
 footer {
-  display: flex;
+  display: none;
   height: fit-content;
   justify-content: center;
   align-items: center;
@@ -366,6 +423,7 @@ footer div span {
   background-repeat: no-repeat;
   background-position: bottom right;
   background-origin: content-box;
+  background-size: contain;
 }
 .contact_Header h1 {
   font-size: 3rem;
