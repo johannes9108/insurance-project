@@ -6,7 +6,9 @@ body {
   margin: auto;
   font-size: 16px;
 }
-
+.wrapper {
+  max-width: 1000px;
+}
 header {
   display: flex;
   background-color: gold;
@@ -483,6 +485,7 @@ main.contact {
   height: 45vh;
 }
 
+
 .formList {
   /* overflow: hidden; */
   /* position: relative; */
@@ -679,4 +682,30 @@ main.contact {
   }
   .wrapper {
   }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 50px;
+}
+body{
+  scrollbar-width: 10px;
+  scrollbar-color: red;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+html {
+  --scrollbarBG: blue;
+  --thumbBG: red;
+}
+
+body {
+  scrollbar-width: none;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
