@@ -6,10 +6,10 @@
   line-height: 1.6;
 }
 body {
-  background-color: navajowhite;
+  /* background-color: navajowhite; */
   --var-mainBG-color: gainsboro;
   --var-testBorder: 1px solid black;
-  margin: auto;
+  margin: 0 auto;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -40,6 +40,7 @@ h6{
   font-size: 1.3rem;
 }
 .wrapper {
+  margin: auto;
   max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(1,1fr);
@@ -106,7 +107,7 @@ header > * {
   /* padding: 1% 3%; */
   border-radius: 40px;
   box-shadow: 0 1px 0px 0px rgb(121, 145, 146);
-  width: 8rem;
+  min-width: 8rem;
   height: 2rem;
 
 }
@@ -252,6 +253,8 @@ main{
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  align-items: flex-start;
+  min-width: 100%;
 }
 
 .personalSafety > * {
@@ -408,17 +411,26 @@ footer div span {
 }
 
 /* CONTACT.html */
-.wrapper {
-  width: 100%;
+.contact_wrapper {
   margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50vh 6vh auto auto;
+  grid-template-areas: 
+  "header"
+  "nav"  
+  "main"
+  "footer"
+  ;
+
+
 }
 .contact_Header {
+  
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(186, 218, 245);
-  height: 15vh;
-  margin: auto;
   padding: 0 10%;
   background-image: url(img/man-and-baby.svg);
   background-repeat: no-repeat;
@@ -429,12 +441,16 @@ footer div span {
 .contact_Header h1 {
   font-size: 2rem;
 }
+nav.contact{
+  grid-area: nav;
+}
 nav.contact,
 .navContainer.contact {
   background-color: white;
 }
 
 main.contact {
+  grid-area: main;
   display: flex;
   justify-content: space-around;
   padding: 5vh 0;
@@ -510,6 +526,7 @@ main.contact {
 }
 
 .mapHolder {
+  grid-area: footer;
   position: relative;
   height: 35vh;
   background-image: url("img/map.PNG");
@@ -536,19 +553,157 @@ main.contact {
   margin: 0;
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 650px) {
   body {
-    width: 80vw;
-    background-color: red;
+    width: 100%;
+    /* background-color: red; */
   }
-  
+
+  .wrapper {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  grid-template-rows: auto 6vh auto 45vh auto;
+  grid-template-areas: 
+  "header"
+  "nav"  
+  "main"
+  "subsection"
+  "footer"
+  ;
+
 }
+  
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-template-areas:
+    "first first"
+    "second second"
+    "third fourth"
+
+    ;
+}
+
+nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  z-index: 1;
+  background-color: var(--var-mainBG-color);
+  top: 0;
+  padding: unset;
+}
+
+.topLeft{
+  grid-area: first;
+  padding: 2rem 0 0 0;
+}
+.bottomLeft{
+  grid-area: second;
+}
+.topRight{
+  grid-area: third;
+}
+.bottomRight{
+  grid-area: fourth;
+}
+  
+
+.mainContent {
+  padding: 1rem 0;
+  gap: 2rem;
+  background-color: red;
+  grid-template-columns: repeat(1,1fr);
+grid-template-rows: minmax(12vh,auto) auto auto;
+background: -webkit-linear-gradient(top, grey 42.5%, orange 0%);
+}
+
+.personalSafety{
+  display: block;
+}
+.personalSafety a {
+  align-self: center;
+}
+.personalSafety > div{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.portraits {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.portraits >div{
+  max-width: 40%;
+  margin: 0 0 1rem 0;
+}
+.portraits .text_container{
+  overflow: hidden;
+}
+
+.aboutUs {
+  padding: unset;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+
+.contact_wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20vh 6vh auto auto;
+  grid-template-areas: 
+  "header"
+  "nav"  
+  "main"
+  "footer"
+  ;
+
+
+}
+
+
+
+.contact_Header {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(186, 218, 245);
+  padding: 0 10%;
+  background-image: url(img/man-and-baby.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-origin: content-box;
+  background-size: contain;
+}
+
+main.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 5vh 0; */
+  box-sizing: border-box;
+  /* border: var(--var-testBorder); */
+  background-color: gainsboro;
+}
+.contact article {
+  width: unset;
+}
+
+}
+
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   body {
     width: 80vw;
-    background-color: yellow;
+    /* background-color: yellow; */
   }
   .gridContentContainer > span,
   .gridContentContainer > p {
@@ -572,7 +727,6 @@ main.contact {
     display: block;
   }
   .personalSafety .joinButton {
-    align-self: flex-start;
   }
 
   .mainContent {
@@ -591,7 +745,6 @@ main.contact {
 @media only screen and (min-width: 992px) {
   body {
     width: 80vw;
-    background-color: lime;
   }
 
   .bottomLeft {
@@ -632,7 +785,7 @@ main.contact {
 @media only screen and (min-width: 1200px) {
   body {
     width: 960px;
-    background-color: pink;
+    /* background-color: pink; */
   }
   .gridSection {
     height: 49vw;
